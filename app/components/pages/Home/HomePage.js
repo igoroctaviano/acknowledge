@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { View, ScrollView, Button, StatusBar, Image, Text } from "react-native";
 
 // Components
-import Tweet from "app/components/common/Tweet/index";
+import Tweet from "app/components/common/Tweet/Tweet";
 
 // Styles
 import styles from "./styles";

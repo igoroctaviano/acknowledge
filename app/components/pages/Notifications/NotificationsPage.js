@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { View, Button, StatusBar, Image } from "react-native";
 
 // Components 
-import Counter from "app/components/common/Counter/index";
+import Counter from "app/components/common/Counter/Counter";
 
 // Styles 
 import styles from "./styles";

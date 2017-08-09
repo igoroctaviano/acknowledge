@@ -3,10 +3,10 @@ const assets = {
     profile: require("../assets/img/profile.png")
   },
   ico: {
-    notifications: require("../assets/img/notification.png"),
-    messages: require("../assets/img/messages.png"),
-    home: require("../assets/img/home.png"),
-    search: require("../assets/img/search.png")
+    notifications: require("../assets/ico/notification.png"),
+    messages: require("../assets/ico/messages.png"),
+    home: require("../assets/ico/home.png"),
+    search: require("../assets/ico/search.png")
   }
 };
 

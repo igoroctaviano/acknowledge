@@ -23,8 +23,8 @@ import {
 import routes from "app/config/routes";
 
 // Components
-import ActionBar from "app/components/common/ActionBar/index";
-import DrawerContent from "app/components/common/DrawerContent/index";
+import ActionBar from "app/components/common/ActionBar/ActionBar";
+import DrawerContent from "app/components/common/DrawerContent/DrawerContent";
 import NotificationsPage from "app/components/pages/Notifications/NotificationsPage";
 
 // Assets
