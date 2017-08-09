@@ -15,8 +15,7 @@ import {
 import {
   StackNavigator,
   TabNavigator,
-  DrawerNavigator,
-  DrawerItems
+  DrawerNavigator
 } from "react-navigation";
 
 // Routes
@@ -29,9 +28,6 @@ import NotificationsPage from "app/components/pages/Notifications/NotificationsP
 
 // Assets
 import assets from "app/config/assets";
-
-// Styles
-import styles from "app/config/styles";
 
 // Palette
 import Palette from "app/config/palette";
