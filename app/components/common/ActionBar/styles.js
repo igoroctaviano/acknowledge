@@ -2,7 +2,7 @@
 import { StyleSheet, StatusBar, Platform } from "react-native";
 
 // Color Palette
-import Palette from "../../config/palette";
+import Palette from "../../../config/palette";
 
 const styles = StyleSheet.create({
   actionBar: {

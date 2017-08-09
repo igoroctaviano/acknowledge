@@ -1,7 +1,7 @@
-import HomePage from "app/routes/Home/index";
-import MessagesPage from "app/routes/Messages/index";
-import SearchPage from "app/routes/Search/index";
-import NotificationsPage from "app/routes/Notifications/index";
+import HomePage from "app/components/pages/Home/HomePage";
+import MessagesPage from "app/components/pages/Messages/MessagesPage";
+import SearchPage from "app/components/pages/Search/SearchPage";
+import NotificationsPage from "app/components/pages/Notifications/NotificationsPage";
 
 const routes = {
   Home: { screen: HomePage },

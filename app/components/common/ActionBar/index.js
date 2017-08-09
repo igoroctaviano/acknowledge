@@ -8,8 +8,8 @@ import {
   TouchableWithoutFeedback
 } from "react-native";
 
-// Images 
-import images from "app/config/images";
+// Assets
+import assets from "app/config/assets";
 
 // Styles 
 import styles from "./styles";
@@ -40,7 +40,7 @@ export default class ActionBar extends Component {
         textTitle = "Search";
         break;
       case "messages":
-        textTitle = "Messages";
+        textTitle = "MessagesPage";
         break;
       default:
         textTitle = "Twitter Feed";
@@ -65,7 +65,7 @@ export default class ActionBar extends Component {
         <TouchableWithoutFeedback
           onPress={this.onPressProfileImage.bind(this)}
         >
-          <Image style={styles.profileImage} source={images.profileImage} />
+          <Image style={styles.profileImage} source={assets.img.profile} />
         </TouchableWithoutFeedback>
         {type === "search"
           ? <SearchInput />

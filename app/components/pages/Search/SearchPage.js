@@ -2,35 +2,35 @@
 import React, { Component } from "react";
 import { View, Button, StatusBar, Image } from "react-native";
 
-// Components 
-import Counter from "app/components/Counter/index";
+// Components
+import Counter from "app/components/common/Counter/index";
 
-// Styles 
+// Styles
 import styles from "./styles";
 
-// Images 
-import images from "app/config/images";
+// Assets
+import assets from "app/config/assets";
 
-export default class NotificationsPage extends Component {
+export default class SearchPage extends Component {
   static navigationOptions = {
-    tabBarLabel: "Notifications",
+    tabBarLabel: "Search",
     tabBarIcon: ({ tintColor }) =>
       <Image
-        source={images.notificationsIcon}
+        source={assets.img.searchIcon}
         style={{ width: 24, height: 24, tintColor: tintColor }}
       />
   };
 
   render() {
-		const { navigate } = this.props.navigation;
-		
+    const { navigate } = this.props.navigation;
+
     return (
       <View style={styles.container}>
-        <Counter text="Notifications" />
+        <Counter text="Search" />
         <Button
           title="Go to Jane's profile"
           onPress={() => {
-            navigate("Messages", { name: "Search props" });
+            navigate("MessagesPage", { name: "Search props" });
           }}
         />
       </View>

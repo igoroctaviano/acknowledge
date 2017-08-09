@@ -23,12 +23,12 @@ import {
 import routes from "app/config/routes";
 
 // Components
-import ActionBar from "app/components/ActionBar/index";
-import DrawerContent from "app/components/DrawerContent/index";
-import NotificationsPage from "app/routes/Notifications/index";
+import ActionBar from "app/components/common/ActionBar/index";
+import DrawerContent from "app/components/common/DrawerContent/index";
+import NotificationsPage from "app/components/pages/Notifications/NotificationsPage";
 
-// Images
-import images from "app/config/images";
+// Assets
+import assets from "app/config/assets";
 
 // Styles
 import styles from "app/config/styles";
@@ -88,11 +88,11 @@ const TabsInDrawer = DrawerNavigator(
     StackNavigator: {
       screen: StacksOverTabs,
       navigationOptions: {
-        title: "Home",
+        title: "HomePage",
         drawer: () => ({
           icon: ({ tintColor }) =>
             <Image
-              source={images.notificationsIcon}
+              source={assets.ico.notifications}
               style={{ width: 24, height: 24, tintColor: tintColor }}
             />
         })
@@ -101,14 +101,11 @@ const TabsInDrawer = DrawerNavigator(
     Notification: {
       screen: NotificationsPage,
       navigationOptions: {
-				style: {
-					backgroundColor: Palette.main
-				},
         title: "Just another page",
         drawer: () => ({
           icon: ({ tintColor }) =>
             <Image
-              source={images.homeIcon}
+              source={assets.ico.home}
               style={{ width: 24, height: 24, tintColor: tintColor }}
             />
         })

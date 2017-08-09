@@ -34,7 +34,7 @@ export default class ActionBar extends Component {
 				textTitle = 'Search';
 				break;
 			case "messages":
-				textTitle = 'Messages';
+				textTitle = 'MessagesPage';
 				break;
 			default:
 				textTitle = 'Twitter Feed';

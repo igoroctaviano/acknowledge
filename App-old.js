@@ -13,7 +13,7 @@ import {
 } from 'react-navigation';
 
 // Routes
-import routes from './config/routes';
+import routes from './config/pages';
 
 // Resources
 import resources from './app/config/resources';
@@ -61,7 +61,7 @@ const TabsInDrawer = DrawerNavigator({
 	StackNavigator: {
 		screen: StacksOverTabs,
 		navigationOptions: {
-			title: 'Home',
+			title: 'HomePage',
 			drawer: () => ({ icon: TabIcon })
 		}
 	},
