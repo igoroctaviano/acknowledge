@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "sdkVersion": "19.0.0",
+    "loading": {
+      "backgroundColor": "#232323",
+      "icon": "./app-old/assets/icons/acknowledge.png",
+      "hideExponentText": true
+    }
+  }
+}
