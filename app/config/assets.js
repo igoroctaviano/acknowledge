@@ -1,6 +1,7 @@
 const assets = {
   img: {
-    profile: require("../assets/img/profile.png")
+    profile: require("../assets/img/profile.png"),
+    chemistry: require("../assets/img/chemistry.png")
   },
   ico: {
     notifications: require("../assets/ico/notification.png"),

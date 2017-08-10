@@ -26,6 +26,8 @@ import ActionBar from "app/components/common/ActionBar/ActionBar";
 import DrawerContent from "app/components/common/DrawerContent/DrawerContent";
 import NotificationsPage from "app/components/pages/Notifications/NotificationsPage";
 
+import Card from "app/components/components/Card/Card";
+
 // Assets
 import assets from "app/config/assets";
 
@@ -39,9 +41,11 @@ export default class App extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <Card />
+
+      /* <View style={{ flex: 1 }}>
         <TabsInDrawer />
-      </View>
+      </View> */
     );
   }
 }
