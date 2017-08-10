@@ -17,7 +17,7 @@ export default class StyledText extends Component {
 
   async componentDidMount() {
     await Font.loadAsync({
-      'nunito-regular': require('../../assets/fonts/Nunito-Regular.ttf'),
+      'nunito-regular': require('../../../assets/fonts/Nunito-Regular.ttf'),
     });
 
     this.setState({ fontLoaded: true });

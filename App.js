@@ -27,6 +27,7 @@ import DrawerContent from "app/components/common/DrawerContent/DrawerContent";
 import NotificationsPage from "app/components/pages/Notifications/NotificationsPage";
 
 import Card from "app/components/components/Card/Card";
+import Deck from "app/components/components/Deck/Deck";
 
 // Assets
 import assets from "app/config/assets";
@@ -41,7 +42,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <Card />
+      <Deck />
+      // <Card />
 
       /* <View style={{ flex: 1 }}>
         <TabsInDrawer />
