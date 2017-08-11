@@ -1,110 +1,101 @@
 // Dependencies
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { Text, View, Image } from 'react-native';
+import { Font } from 'expo';
 
 // Component
 import SwipeCards from 'react-native-swipe-cards';
+import SectionCard from '../SectionCard/SectionCard';
+import * as Progress from 'react-native-progress';
 
 // Styles
 import styles from "./styles";
 
-// Assets
-import assets from "app/config/assets"
+// Content
+import Syllabus from "./Syllabus";
 
-function Card(props) {
-  return (
-    <View style={[styles2.card, {backgroundColor: props.backgroundColor}]}>
-      <Text>{props.text}</Text>
-    </View>
-  );
-}
+export default class Deck extends Component {
+  constructor(props) {
+    super(props);
 
-function CustomizedCard(props) {
-  return (
-    <View style={styles.card}>
-      <Image style={styles.image} source={assets.img.chemistry}/>
-      <View style={styles.header}>
-        <Text style={styles.title}>{props.title}</Text>
-        <Text style={styles.keywords}>{props.keywords}</Text>
-      </View>
-      <Text style={styles.content}>{props.content}</Text>
-    </View>
-  );
-}
+    this.state = {
+      data: Syllabus,
+      fontLoaded: false,
+      counter: 0
+    };
+  }
 
-const content = [
-  { title: "Why we need to test?",
-    keywords: "Test, Testability, Software, Development",
-    content: "Software..Software..Software..Software..Software..Software..Software..Software..Software..Software..Software.." },
-  { title: "Why we need to test?",
-    keywords: "Test, Testability, Software, Development",
-    content: "Software..Software..Software..Software..Software..Software..Software..Software..Software..Software..Software.." }
-];
+  async componentDidMount() {
+    await Font.loadAsync({
+      'nunito-regular': require('../../../assets/fonts/Nunito-Regular.ttf'),
+    });
 
-function NoMoreCards(props) {
-  return (
-    <View>
-      <Text style={styles2.noMoreCardsText}>No more cards!</Text>
-    </View>
-  );
-}
+    this.setState({ fontLoaded: true });
+  }
 
-const data = [
-  {text: 'Tomato', backgroundColor: 'red'},
-  {text: 'Aubergine', backgroundColor: 'purple'},
-  {text: 'Courgette', backgroundColor: 'green'},
-  {text: 'Blueberry', backgroundColor: 'blue'},
-  {text: 'Umm...', backgroundColor: 'cyan'},
-  {text: 'orange', backgroundColor: 'orange'},
-];
-
-export default React.createClass({
-  getInitialState() {
-    return {
-      cardsData: content
-    }
-  },
-  handleYup (card) {
+  handleYup(card) {
+    this.incrementProgressBar();
     console.log(`Yup for ${card.text}`);
-  },
-  handleNope (card) {
+  }
+
+  handleNope(card) {
+    this.incrementProgressBar();
     console.log(`Nope for ${card.text}`);
-  },
-  handleMaybe (card) {
+  }
+
+  handleMaybe(card) {
+    this.incrementProgressBar();
     console.log(`Maybe for ${card.text}`);
-  },
+  }
+
+  incrementProgressBar() {
+    const { counter } = this.state;
+    this.setState({ counter: counter + 1 });
+  }
+
   render() {
-    // If you want a stack of cards instead of one-per-one view, activate stack mode
-    // stack={true}
+    // If you want a stack of cards instead of one-per-one view, activate stack mode -> stack={true}
     return (
-      <View style={{ backgroundColor: "#A5D299", flex: 1 }}>
-        <SwipeCards
-          cards={this.state.cardsData}
+      <View style={{ backgroundColor: "#ADD47C", flex: 1 }}>
+        <View style={{ padding: 10 }}>
+          <Progress.Bar progress={this.state.counter / 10} width={300} />
+        </View>
+        { this.state.fontLoaded ? (
+          <SwipeCards
+            cards={this.state.data}
 
-          renderCard={(cardData) => <CustomizedCard {...cardData} />}
-          renderNoMoreCards={() => <NoMoreCards />}
+            renderCard={(cardData) => <Card {...cardData} />}
+            renderNoMoreCards={() => <NoMoreCards />}
 
-          loop={true}
+            loop={true}
+            showNope={false}
+            showYup={false}
+            showMaybe={false}
+            smoothTransition={true}
+            // stack={true}
 
-          handleYup={this.handleYup}
-          handleNope={this.handleNope}
-          handleMaybe={this.handleMaybe}
-          hasMaybeAction
-        />
+            handleYup={this.handleYup.bind(this)}
+            handleNope={this.handleNope.bind(this)}
+            handleMaybe={this.handleMaybe.bind(this)}
+            hasMaybeAction
+          />
+        ) : null }
       </View>
     );
   }
-})
+}
 
-const styles2 = StyleSheet.create({
-  card: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 300,
-    height: 300,
-  },
-  noMoreCardsText: {
-    fontSize: 22,
-  }
-});
+const Card = (props) => (
+  <View style={styles.container}>
+    <View style={styles.card}>
+      <Image style={styles.image} source={props.image}/>
+      <Text style={styles.content}>{props.content}</Text>
+    </View>
+  </View>
+);
+
+const NoMoreCards = (props) => (
+  <View>
+    <Text style={{ fontSize: 22 }}>No more cards!</Text>
+  </View>
+);

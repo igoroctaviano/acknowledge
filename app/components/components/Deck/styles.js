@@ -2,53 +2,44 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  frame: {
-    flex: 1,
-    flexDirection: "column",
-  },
-  card: {
+  container: {
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     alignContent: "center",
+  },
+  card: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
+    alignContent: "center",
+    justifyContent: "flex-start",
 
-    marginTop: 70,
-    marginBottom: 70,
-    marginLeft: 25,
-    marginRight: 25,
+    maxHeight: "82%",
+    maxWidth: "97%",
 
     borderRadius: 5,
     backgroundColor: "white",
-    padding: 15
-  },
-  title: {
-    fontSize: 40
+    padding: 20,
+
+    elevation: 5,
   },
   content: {
-    textAlignVertical: "center",
-    textAlign: "center",
-
-    paddingTop: 10,
-    fontSize: 25
+    fontFamily: "nunito-regular",
+    fontSize: 30
   },
-  keywords: {
-    fontSize: 17,
-  },
-  header: {
-    paddingTop: 10,
-    paddingBottom: 20,
-
+  imageContainer: {
     flex: 1,
-    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    alignContent: "center",
   },
   image: {
-    paddingTop: 10,
-    height: 100,
-    width: 100
-  }
+    margin: 25,
+    height: 150,
+    width: 150
+  },
 });
 
 export default styles;

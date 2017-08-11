@@ -4,10 +4,10 @@ import * as firebase from "firebase";
 class Firebase {
   static initialise() {
     firebase.initializeApp({
-      apiKey: "AIzaSyC7gQYzEj0W8A02mETpadftMO-qaKp_x-0",
-      authDomain: "ongk9-a4630.firebaseapp.com",
-      databaseURL: "https://ongk9-a4630.firebaseio.com/",
-      storageBucket: "gs://ongk9-a4630.appspot.com/",
+      apiKey: "AIzaSyBIWl_X8wBJYFVqxswgfqNiZoZiZcJAnzk",
+      authDomain: "acknowledge-bc776.firebaseapp.com",
+      databaseURL: "https://acknowledge-bc776.firebaseio.com/",
+      storageBucket: "gs://acknowledge-bc776.appspot.com/",
     });
   }
 }
