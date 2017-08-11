@@ -56,10 +56,8 @@ export default class Deck extends Component {
   render() {
     // If you want a stack of cards instead of one-per-one view, activate stack mode -> stack={true}
     return (
-      <View style={{ backgroundColor: "#ADD47C", flex: 1 }}>
-        <View style={{ padding: 10 }}>
-          <Progress.Bar progress={this.state.counter / 10} width={300} />
-        </View>
+      <View style={{ backgroundColor: "#ADD47C", flex: 1, justifyContent: "center", alignItems: "center", alignContent: "center" }}>
+        <Progress.Bar progress={this.state.counter / 10} width={270} color={'white'} />
         { this.state.fontLoaded ? (
           <SwipeCards
             cards={this.state.data}

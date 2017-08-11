@@ -42,7 +42,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <Deck />
+      <View style={{ flex: 1, marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight }}>
+        <Deck />
+      </View>
       // <Card />
 
       /* <View style={{ flex: 1 }}>

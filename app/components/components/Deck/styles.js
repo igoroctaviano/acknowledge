@@ -10,14 +10,13 @@ const styles = StyleSheet.create({
     alignContent: "center",
   },
   card: {
-    flex: 1,
     flexDirection: "column",
     alignItems: "center",
     alignContent: "center",
     justifyContent: "flex-start",
 
-    maxHeight: "82%",
-    maxWidth: "97%",
+    height: 600,
+    width: 385,
 
     borderRadius: 5,
     backgroundColor: "white",
