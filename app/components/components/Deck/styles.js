@@ -16,13 +16,13 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
 
     height: 600,
-    width: 385,
+    width: 395,
 
     borderRadius: 5,
     backgroundColor: "white",
     padding: 20,
 
-    elevation: 5,
+    elevation: 5
   },
   content: {
     fontFamily: "nunito-regular",

@@ -5,21 +5,17 @@ import { Font } from 'expo';
 
 // Component
 import SwipeCards from 'react-native-swipe-cards';
-import SectionCard from '../SectionCard/SectionCard';
 import * as Progress from 'react-native-progress';
 
 // Styles
 import styles from "./styles";
-
-// Content
-import Syllabus from "./Syllabus";
 
 export default class Deck extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      data: Syllabus,
+      data: this.props.data,
       fontLoaded: false,
       counter: 0
     };
@@ -57,7 +53,7 @@ export default class Deck extends Component {
     // If you want a stack of cards instead of one-per-one view, activate stack mode -> stack={true}
     return (
       <View style={{ backgroundColor: "#ADD47C", flex: 1, justifyContent: "center", alignItems: "center", alignContent: "center" }}>
-        <View style={{ paddingTop: 25 }}>
+        <View style={{ paddingTop: 30 }}>
           <Progress.Bar progress={this.state.counter / 10} width={270} color={'white'} />
         </View>
         { this.state.fontLoaded ? (

@@ -28,6 +28,7 @@ import NotificationsPage from "app/components/pages/Notifications/NotificationsP
 
 import Card from "app/components/components/Card/Card";
 import Deck from "app/components/components/Deck/Deck";
+import StackMenu from "app/components/components/StackMenu/StackMenu";
 
 // Assets
 import assets from "app/config/assets";
@@ -40,16 +41,20 @@ export default class App extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    //StatusBar.setBarStyle('light-content', true);
+    //StatusBar.setTranslucent(true);
+  }
+
   render() {
     return (
-      <View style={{ flex: 1, marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight }}>
-        <Deck />
-      </View>
-      // <Card />
+      // <Deck />
 
       /* <View style={{ flex: 1 }}>
-        <TabsInDrawer />
-      </View> */
+           <TabsInDrawer />
+         </View> */
+
+      <StackMenu />
     );
   }
 }
